@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Safety & Equipment | Mid Georgia Boat Club{% endblock %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home/css/amenities.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/photos.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="photos">
+    <img src="{% static 'home/images/equiptment.jpg' %}" alt="Boat Safety Equipment" style="height: 450px; object-fit: cover;">
+    <div class="photo-text" style="top: 50%; transform: translate(-50%, -50%);">
+        <h1 style="font-size: 2.5rem; font-weight: bold; margin: 0;">Safety &amp; Equipment</h1>
+        <p style="font-size: 1.2rem; margin: 10px 0 0;">Everything you need for a safe and comfortable ride — already on board.</p>
+    </div>
+</div>
+
+<div style="background: #0f1d32; color: white; text-align: center; padding: 50px 20px;">
+    <h2 style="font-size: 2rem; margin-bottom: 20px;">Fully Equipped. Every Time.</h2>
+    <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+        Every boat in our fleet is equipped with premium safety gear and modern navigation technology so you can focus on what matters — enjoying your time on the water. No renting equipment, no guessing, no packing — just show up and go.
+    </p>
+</div>
+
+<div style="background: transparent; padding: 40px 20px; text-align: center;">
+    <h2 style="font-size: 2rem; margin-bottom: 20px; color: #fff;">What's On Every Boat</h2>
+    <div class="amenities-box">
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Depth Finder</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Navigate shallow waters with confidence. Our onboard depth finders give you real-time depth readings so you can avoid hazards and find the best fishing spots.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">GPS Navigation</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Chart your course with confidence. Every boat comes with a GPS navigation system so you always know exactly where you are on the water, no matter how far you roam.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">VHF Marine Radio</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Stay connected and safe. Our boats feature VHF marine radios for emergency communication, marina coordination, and NOAA weather alerts on the water.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Life Vests</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Safety first. We provide USCG-approved life jackets in sizes for every passenger — adults, youth, and children. Your whole family is covered before you leave the dock.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">First Aid Kit</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Every boat is stocked with a fully equipped first aid kit. Minor cuts, scrapes, and sunburns happen — we make sure you're prepared to handle them right on board.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Bimini Tops</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Georgia summers are hot. Our boats feature retractable bimini tops that provide shade and shelter, keeping you cool and comfortable all day long on the water.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Dual Anchors</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Two anchors on every boat means you're always prepared to hold your position — whether you're fishing a cove, swimming at a sandbar, or waiting out a passing storm.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Marine Speakers</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Bring the playlist. Our boats are outfitted with weather-resistant marine-grade speakers and Bluetooth connectivity so you can soundtrack every moment on the water.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Navigation Lights</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Head out early or stay out late. All our boats carry a full set of navigation lights for safe operation in low-light conditions — from dawn fishing runs to evening cruises.</p>
+        </div>
+
+    </div>
+</div>
+
+<div style="background: #0f1d32; color: white; text-align: center; padding: 70px 20px;">
+    <h2 style="font-size: 2rem; margin-bottom: 20px;">Everything Included. Nothing Extra.</h2>
+    <p style="font-size: 1.1rem; max-width: 650px; margin: 0 auto 35px; line-height: 1.8;">
+        Every piece of safety and navigation equipment is included with your membership — no rental fees, no add-ons. Join Mid Georgia Boat Club and hop on a fully equipped boat anytime you want.
+    </p>
+    <a href="{% url 'home' %}" class="learn-more-btn">Back to Home</a>
+</div>
+
+{% endblock %}

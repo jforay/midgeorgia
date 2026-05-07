@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}Get Back To What You Love | Mid Georgia Boat Club{% endblock %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home/css/amenities.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/photos.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="photos">
+    <img src="{% static 'home/images/Do-What-You-Love.jpg' %}" alt="Get back to what you love" style="height: 500px; object-fit: cover;">
+    <div class="photo-text" style="top: 50%; transform: translate(-50%, -50%);">
+        <h1 style="font-size: 2.8rem; font-weight: bold; margin: 0;">Get Back To What You Love</h1>
+        <p style="font-size: 1.2rem; margin: 10px 0 0;">Life's too short to spend it on maintenance.</p>
+    </div>
+</div>
+
+<div style="background: #0f1d32; color: white; text-align: center; padding: 60px 20px;">
+    <h2 style="font-size: 2.2rem; margin-bottom: 20px;">We Are Here To Get You Back On The Water</h2>
+    <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+        Mid Georgia Boat Club exists for one reason — to put you and the people you love back on the water. Whether it's fishing at sunrise, tubing with the kids, or a quiet cruise at sunset, we make it effortless. No ownership headaches, no waiting, no hassle. Just boating.
+    </p>
+</div>
+
+<div style="background: transparent; padding: 40px 20px; text-align: center;">
+    <h2 style="font-size: 2rem; margin-bottom: 20px; color: #fff;">Membership Benefits</h2>
+    <div class="amenities-box">
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Full Fleet Access</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Choose from our entire fleet of well-maintained boats. Whether you want a pontoon for family outings or a fishing boat for a solo morning run, the right boat is always available for you.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Easy Reservations</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Book your boat online 24/7 through our simple member portal. Pick your date, pick your boat, show up. Reservations take minutes, and your spot is secured instantly.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">On-Water Training</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Never boated before? No problem. Every new member receives comprehensive on-water training from our certified instructors before heading out solo. Safety and confidence guaranteed.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Family Friendly</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Every membership covers you and your immediate family. Kids, spouses, parents — your whole crew is welcome aboard. No extra per-trip fees, just time together on the water.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Zero Maintenance</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">We handle all cleaning, fueling, and maintenance after every trip. You never touch a wrench or a mop. Your only job is to have a great time and return the boat to the dock.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Dedicated Support</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Our friendly team is available by phone and right at the marina. Have a question before your trip or need help at the dock? We are always here to make your day on the water exceptional.</p>
+        </div>
+
+    </div>
+</div>
+
+<div class="carousel-text-container">
+    <div class="photos" style="flex: 1;">
+        <img src="{% static 'home/images/A-Woman-Boat.jpg' %}" alt="Enjoying the boat" style="height: 500px; object-fit: cover; max-width: 700px; width: 60vw;">
+    </div>
+    <div class="text-container" style="max-width: 50%; padding: 45px;">
+        <h2>More Time For The Moments That Matter</h2>
+        <p>Imagine spending a Saturday morning on the lake with your kids instead of in the driveway doing boat maintenance. Imagine fishing at sunrise without having spent the night before checking the engine, loading the trailer, and hauling across town.</p>
+        <p>That's the membership difference. We give you back the time, the energy, and the freedom to actually enjoy the water — on your terms, whenever you want, without the burden of ownership.</p>
+        <a href="tel:+12397450110" class="learn-more-btn">Call to Join Today</a>
+    </div>
+</div>
+
+<div style="background: #0f1d32; color: white; text-align: center; padding: 70px 20px;">
+    <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Your Next Adventure Starts Here</h2>
+    <p style="font-size: 1.1rem; max-width: 650px; margin: 0 auto 35px; line-height: 1.8;">
+        Join Mid Georgia Boat Club today and get back to doing what you love — spending time on the water with the people who matter most. No boat required.
+    </p>
+    <a href="tel:+12397450110" class="learn-more-btn">Call (239) 745-0110 to Get Started</a>
+</div>
+
+{% endblock %}

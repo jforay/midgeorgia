@@ -44,6 +44,14 @@
                                 <a href="tel:+12397450110">(239) 745 - 0110</a>
                             </div>
                         </div>
+                        <nav class="navbar">
+                            <ul class="nav-list">
+                                <li><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="{% url 'equipment' %}">Equipment</a></li>
+                                <li><a href="{% url 'first_responders' %}">First Responders &amp; Military</a></li>
+                                <li><a href="{% url 'dirty_work' %}">We Do The Dirty Work</a></li>
+                            </ul>
+                        </nav>
                     </div>
 
                 </div>
@@ -51,15 +59,24 @@
 
             <!-- Mobile screens -->
             <div class="d-block d-md-none">
-                <nav class="navbar navbar-dark mobile-nav">
-                        
-                        <div class="header-text">
-                            <a href="{% url 'home' %}">
-                                <img src="{% static 'images/midgeorgia.png' %}" alt="Boat Club Logo" style="height: 100px;">
-                                <h1 style="font-size: 2rem;">Mid  Georgia  Boat  Club™</h1>
-                            </a>
-                            
-                        </div>
+                <nav class="navbar navbar-dark mobile-nav flex-wrap px-3">
+                    <div class="header-text">
+                        <a href="{% url 'home' %}">
+                            <img src="{% static 'images/midgeorgia.png' %}" alt="Boat Club Logo" style="height: 100px;">
+                            <h1 style="font-size: 2rem;">Mid  Georgia  Boat  Club™</h1>
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNavMenu" aria-controls="mobileNavMenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mobileNavMenu">
+                        <ul class="navbar-nav text-center w-100 py-2">
+                            <li class="nav-item"><a class="nav-link text-white fw-bold" href="{% url 'home' %}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link text-white fw-bold" href="{% url 'equipment' %}">Equipment</a></li>
+                            <li class="nav-item"><a class="nav-link text-white fw-bold" href="{% url 'first_responders' %}">First Responders &amp; Military</a></li>
+                            <li class="nav-item"><a class="nav-link text-white fw-bold" href="{% url 'dirty_work' %}">We Do The Dirty Work</a></li>
+                        </ul>
+                    </div>
                 </nav>
             </div>
         </header>

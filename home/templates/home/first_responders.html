@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}First Responders & Military | Mid Georgia Boat Club{% endblock %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home/css/amenities.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/photos.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="parallax-section" style="background-image: url('{% static "home/images/firstresponders.jpg" %}');">
+    <div class="rotate-photo">
+        <div class="photo">
+            <img src="{% static 'home/images/Military-Emblems-Circle.png' %}" alt="Rotating service emblems">
+        </div>
+    </div>
+    <div class="overlay">
+        <h1 style="font-size: 2.2rem; margin-bottom: 20px;">Honoring Those Who Serve</h1>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+            Mid Georgia Boat Club™ is proud to honor the men and women who dedicate their lives to protecting and serving our communities. As a token of our appreciation, we offer exclusive membership discounts to those who serve.
+        </p>
+    </div>
+</div>
+
+<div style="background: #0f1d32; color: white; text-align: center; padding: 60px 20px;">
+    <h2 style="font-size: 2rem; margin-bottom: 20px;">Exclusive Member Discount</h2>
+    <p style="font-size: 1.1rem; max-width: 750px; margin: 0 auto 30px; line-height: 1.8;">
+        We offer a special discounted membership to all active and retired military, first responders, and their immediate families. Enjoy all the pleasures and excitement of boating without the hassles and costs of owning a boat — at a price that honors your service.
+    </p>
+    <a href="tel:+12397450110" class="learn-more-btn">Call to Learn More: (239) 745-0110</a>
+</div>
+
+<div style="background: transparent; padding: 40px 20px; text-align: center;">
+    <h2 style="font-size: 2rem; margin-bottom: 20px; color: #fff;">Who Qualifies?</h2>
+    <div class="amenities-box">
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Active Military</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">All branches — Army, Navy, Air Force, Marine Corps, Coast Guard, and Space Force. Immediate family members living in the same household are also eligible for the discount.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Retired Military</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Veterans and retired service members from all branches who honorably served our country. Your service doesn't expire — and neither does your discount with us.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Firefighters</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Active and retired firefighters from career and volunteer departments alike. You run into burning buildings — you deserve to unwind on the water whenever you want.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Police Officers</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Active duty and retired law enforcement officers from local, county, and state agencies. We appreciate your dedication to keeping our communities safe every single day.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">First Responders</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">EMTs, paramedics, and emergency medical technicians. You respond when seconds matter most — let us give you a place to relax and recharge when you're off duty.</p>
+        </div>
+
+        <div class="grid-item" style="padding: 25px;">
+            <h3 style="color: #0f1d32; font-size: 1.3rem; margin-bottom: 10px;">Nurses</h3>
+            <p style="color: #0f1d32; font-size: 0.95rem; line-height: 1.6;">Registered nurses, licensed practical nurses, nurse practitioners, and other nursing professionals. Your compassion and long hours deserve a well-earned day on the water.</p>
+        </div>
+
+    </div>
+</div>
+
+<div class="carousel-text-container">
+    <div class="text-container" style="max-width: 50%; padding: 50px;">
+        <h2>How to Claim Your Discount</h2>
+        <p>It's simple. Bring any one of the following when you come in for your orientation or call us ahead of time to get started:</p>
+        <ul style="text-align: left; font-size: 1.05rem; line-height: 2.2; margin-bottom: 25px;">
+            <li>Military ID or DD-214 discharge papers</li>
+            <li>Law enforcement or fire department badge / agency ID</li>
+            <li>Employer verification letter on official letterhead</li>
+            <li>Nursing license or hospital / clinic employee ID</li>
+        </ul>
+        <p>Our team will verify your eligibility and apply your discount to the membership on the spot. Have questions before coming in? Just give us a call — we're happy to walk you through it.</p>
+        <a href="tel:+12397450110" class="learn-more-btn">Call (239) 745-0110</a>
+    </div>
+    <div class="photos" style="flex: 1;">
+        <img src="{% static 'home/images/firstresponders.jpg' %}" alt="First Responders" style="height: 500px; object-fit: cover; max-width: 700px; width: 60vw;">
+    </div>
+</div>
+
+<div style="background: #0f1d32; color: white; text-align: center; padding: 60px 20px;">
+    <h2 style="font-size: 2rem; margin-bottom: 20px;">Thank You For Your Service</h2>
+    <p style="font-size: 1.1rem; max-width: 650px; margin: 0 auto 30px; line-height: 1.8;">
+        Mid Georgia Boat Club™ is honored to give back to those who give so much. Reach out today to learn more about our discount program and start enjoying the water.
+    </p>
+    <a href="{% url 'home' %}" class="learn-more-btn">Back to Home</a>
+</div>
+
+{% endblock %}
