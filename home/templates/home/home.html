@@ -100,7 +100,7 @@
 </div>
 
 
-<div class="parallax-section" style="background-image: url('{% static "home/images/old/firstresponders.jpg" %}');">
+<div class="parallax-section" style="background-image: url('{% static "home/images/old/firstresponders.jpg" %}'); background-attachment: scroll;">
     <div class="rotate-photo">
         <div class="photo">
             <img src="{% static 'home/images/Military-Emblems-Circle.png' %}" alt="Rotating emblems">
@@ -119,34 +119,61 @@
 
 </div>
 
-<div style="background: transparent; padding: 50px 20px; text-align: center;">
+<div style="background: transparent; padding: 40px 20px; text-align: center;">
     <h2 style="font-size: 2rem; margin-bottom: 10px; color: #fff;">Club Amenities</h2>
     <p style="color: white; font-size: 1.1rem; margin-bottom: 30px;">Everything you need for the perfect day on the water — included with membership.</p>
-    <div class="amenities-box">
-        <div class="grid-item" style="padding: 20px;">
-            <h3 style="color: #0f1d32; font-size: 1.2rem; margin-bottom: 8px;">Kawasaki Jet Skis</h3>
-            <p style="color: #0f1d32; font-size: 0.9rem; line-height: 1.5;">Feel the rush on our Kawasaki jet skis — the fastest way to enjoy the lake.</p>
-        </div>
-        <div class="grid-item" style="padding: 20px;">
-            <h3 style="color: #0f1d32; font-size: 1.2rem; margin-bottom: 8px;">Kayaks</h3>
-            <p style="color: #0f1d32; font-size: 0.9rem; line-height: 1.5;">Explore quiet coves and shorelines at your own pace in one of our kayaks.</p>
-        </div>
-        <div class="grid-item" style="padding: 20px;">
-            <h3 style="color: #0f1d32; font-size: 1.2rem; margin-bottom: 8px;">Paddleboards</h3>
-            <p style="color: #0f1d32; font-size: 0.9rem; line-height: 1.5;">Stand-up paddleboarding for all skill levels — a great workout and a great time.</p>
-        </div>
-        <div class="grid-item" style="padding: 20px;">
-            <h3 style="color: #0f1d32; font-size: 1.2rem; margin-bottom: 8px;">Pontoon &amp; Deck Boats</h3>
-            <p style="color: #0f1d32; font-size: 0.9rem; line-height: 1.5;">Perfect for families and groups — cleaned, fueled, and ready for every reservation.</p>
+        <div class="amenities-box" style="grid-template-columns: repeat(6, 1fr);">
+
+        <div class="grid-item" style="padding: 0; overflow: hidden; grid-column: span 2;">
+            <!-- Add jet ski image URL to src below -->
+            <img src="" alt="Jet Skis (Coming soon!)" style="width: 100%; height: 200px; object-fit: cover; display: block; background: #c8d8e8;">
+            <div style="padding: 20px; background: #0f1d32;">
+                <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">Kawasaki Jet Skis</h3>
+                <p style="color: #fff; font-size: 0.95rem; line-height: 1.6;">Hit the water at full throttle on our Kawasaki jet skis. Whether you're carving wakes, exploring the shoreline, or just feeling the rush, our jet skis deliver an experience unlike anything else on the lake.</p>
+            </div>
         </div>
 
-        <div class="grid-item" style="padding: 20px;">
-            <h3 style="color: #0f1d32; font-size: 1.2rem; margin-bottom: 8px;">Full-Service Marina</h3>
-            <p style="color: #0f1d32; font-size: 0.9rem; line-height: 1.5;">Staffed dock, fuel, and professional support on site every day of operation.</p>
+        <div class="grid-item" style="padding: 0; overflow: hidden; grid-column: span 2;">
+            <!-- Add kayak image URL to src below -->
+            <img src="" alt="Kayaks" style="width: 100%; height: 200px; object-fit: cover; display: block; background: #c8d8e8;">
+            <div style="padding: 20px; background: #0f1d32;">
+                <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">Kayaks</h3>
+                <p style="color: #fff; font-size: 0.95rem; line-height: 1.6;">Prefer a slower pace? Our kayaks let you explore quiet coves, fish from the water, or just soak in the scenery at your own speed. Perfect for solo outings or a peaceful trip with a partner.</p>
+            </div>
         </div>
+
+        <div class="grid-item" style="padding: 0; overflow: hidden; grid-column: span 2;">
+            <!-- Add paddleboard image URL to src below -->
+            <img src="" alt="Paddleboards" style="width: 100%; height: 200px; object-fit: cover; display: block; background: #c8d8e8;">
+            <div style="padding: 20px; background: #0f1d32;">
+                <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">Paddleboards</h3>
+                <p style="color: #fff; font-size: 0.95rem; line-height: 1.6;">Stand-up paddleboarding is one of the best full-body workouts on the water — or just a fun, relaxing way to cruise the lake. Boards are available for all skill levels, beginners included.</p>
+            </div>
+        </div>
+
+        <div class="grid-item" style="padding: 0; overflow: hidden; grid-column: span 3;">
+            <!-- Add pontoon/deck boat image URL to src below -->
+            <img src="" alt="Pontoon and Deck Boats" style="width: 100%; height: 200px; object-fit: cover; display: block; background: #c8d8e8;">
+            <div style="padding: 20px; background: #0f1d32;">
+                <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">Pontoon &amp; Deck Boats</h3>
+                <p style="color: #fff; font-size: 0.95rem; line-height: 1.6;">Our full fleet of pontoon and deck boats is ready for family days, sunset cruises, and everything in between. Cleaned, fueled, and stocked with safety gear before every reservation.</p>
+            </div>
+        </div>
+
+
+        <div class="grid-item" style="padding: 0; overflow: hidden; grid-column: span 3;">
+            <!-- Add marina image URL to src below -->
+            <img src="" alt="Full-Service Marina" style="width: 100%; height: 200px; object-fit: cover; display: block; background: #c8d8e8;">
+            <div style="padding: 20px; background: #0f1d32;">
+                <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">Full-Service Marina</h3>
+                <p style="color: #fff; font-size: 0.95rem; line-height: 1.6;">Our on-site marina staff is there every day of operation. Dock assistance, fueling, equipment storage, and a clean, professional facility to make your arrival and departure effortless.</p>
+            </div>
+        </div>
+
     </div>
     <br><br>
     <a href="{% url 'amenities' %}" class="learn-more-btn">See All Amenities</a>
+
 </div>
 
 
