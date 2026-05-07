@@ -14,3 +14,6 @@ def dirty_work(request):
 
 def get_back(request):
     return render(request, 'home/get_back.html')
+
+def amenities(request):
+    return render(request, 'home/amenities.html')
