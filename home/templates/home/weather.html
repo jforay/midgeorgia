@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% block title %}Lake Tobesofkee Weather Forecast | Mid Georgia Boat Club{% endblock %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home/css/weather.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero: current conditions -->
+<div class="wx-hero">
+    <h1 style="font-size:1.8rem; font-weight:700; margin:0 0 4px;">⛵ Lake Tobesofkee Weather</h1>
+    <p style="opacity:0.75; margin:0; font-size:0.95rem;">Macon, Georgia &nbsp;·&nbsp; <span id="wx-updated">Fetching live data…</span></p>
+
+    <div class="wx-current-card">
+        <div class="wx-current-icon" id="wc-icon">🌡️</div>
+        <div class="wx-current-temp" id="wc-temp">--°F</div>
+        <div class="wx-current-details">
+            <div class="wx-current-desc" id="wc-desc">Loading…</div>
+            <div class="wx-current-meta">
+                💧 Humidity: <strong id="wc-humid">--</strong>% &nbsp;|&nbsp;
+                💨 Wind: <strong id="wc-wind">--</strong> mph &nbsp;|&nbsp;
+                🌧 Precip today: <strong id="wc-precip">--</strong> in
+            </div>
+            <div class="wx-current-meta" style="margin-top:4px;">
+                🌅 Sunrise: <strong id="wc-sunrise">--</strong> &nbsp;|&nbsp;
+                🌇 Sunset: <strong id="wc-sunset">--</strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Forecast section -->
+<div class="forecast-section">
+    <div class="container-fluid" style="max-width:1200px;">
+
+        <div class="d-flex align-items-center gap-2 mb-4 flex-wrap">
+            <h2 style="margin:0; font-size:1.3rem; font-weight:700; color:white;">Forecast</h2>
+            <div style="background:#e9eef5; border-radius:30px; padding:4px; display:inline-flex; gap:4px; margin-left:12px;">
+                <button class="tab-toggle active" id="btn-week" onclick="showTab('week')">7-Day</button>
+                <button class="tab-toggle" id="btn-extended" onclick="showTab('extended')">16-Day</button>
+            </div>
+        </div>
+
+        <div id="wx-loading">⏳ Loading forecast…</div>
+
+        <div id="tab-week" style="display:none;">
+            <div class="row g-3" id="forecast-week"></div>
+        </div>
+        <div id="tab-extended" style="display:none;">
+            <div class="row g-3" id="forecast-extended"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function () {
+    var WMO = {
+        0:['☀️','Clear sky'],
+        1:['🌤️','Mainly clear'], 2:['⛅','Partly cloudy'], 3:['☁️','Overcast'],
+        45:['🌫️','Fog'], 48:['🌫️','Depositing rime fog'],
+        51:['🌦️','Light drizzle'], 53:['🌦️','Drizzle'], 55:['🌧️','Heavy drizzle'],
+        61:['🌧️','Light rain'], 63:['🌧️','Rain'], 65:['🌧️','Heavy rain'],
+        71:['🌨️','Light snow'], 73:['🌨️','Snow'], 75:['❄️','Heavy snow'], 77:['🌨️','Snow grains'],
+        80:['🌦️','Rain showers'], 81:['🌧️','Heavy showers'], 82:['⛈️','Violent showers'],
+        85:['🌨️','Snow showers'], 86:['❄️','Heavy snow showers'],
+        95:['⛈️','Thunderstorm'], 96:['⛈️','T-storm w/ hail'], 99:['⛈️','T-storm w/ hail']
+    };
+    var DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+    function set(id, val) { var el = document.getElementById(id); if (el) el.textContent = val; }
+
+    function fmt12(iso) {
+        var d = new Date(iso);
+        var h = d.getHours(), m = d.getMinutes(), ampm = h >= 12 ? 'PM' : 'AM';
+        h = h % 12 || 12;
+        return h + ':' + (m < 10 ? '0' : '') + m + ' ' + ampm;
+    }
+
+    function buildCard(dateStr, code, hi, lo, rainPct, wind, isToday) {
+        var wx = WMO[code] || ['🌡️', 'Unknown'];
+        var d = new Date(dateStr + 'T12:00:00');
+        var dayName = isToday ? 'Today' : DAYS[d.getDay()];
+        var dateLabel = MONTHS[d.getMonth()] + ' ' + d.getDate();
+        var rainColor = rainPct > 60 ? '#2d7fd4' : '#74b3e8';
+        var rainBar = '<div class="rain-bar-track"><div class="rain-bar-fill" style="width:' + rainPct + '%;background:' + rainColor + ';"></div></div>';
+
+        return '<div class="col-6 col-sm-4 col-md-3 col-lg-2">' +
+            '<div class="day-card"' + (isToday ? ' style="border-top-color:#e8a020;"' : '') + '>' +
+            '<div class="day-name">' + dayName + '</div>' +
+            '<div class="day-date">' + dateLabel + '</div>' +
+            '<div class="day-icon">' + wx[0] + '</div>' +
+            '<div class="day-desc">' + wx[1] + '</div>' +
+            '<div class="day-temps">' + Math.round(hi) + '° <span>/ ' + Math.round(lo) + '°F</span></div>' +
+            rainBar +
+            '<div class="day-meta">🌧 ' + rainPct + '% &nbsp;💨 ' + Math.round(wind) + ' mph</div>' +
+            '</div></div>';
+    }
+
+    var apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=32.8407&longitude=-83.6938' +
+        '&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code,precipitation' +
+        '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max,precipitation_sum,sunrise,sunset' +
+        '&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FNew_York&forecast_days=16';
+
+    fetch(apiUrl)
+        .then(function(r){ return r.json(); })
+        .then(function(data){
+            var c = data.current;
+            var wx = WMO[c.weather_code] || ['🌡️','Unknown'];
+            set('wc-icon', wx[0]);
+            set('wc-temp', Math.round(c.temperature_2m) + '°F');
+            set('wc-desc', wx[1]);
+            set('wc-humid', Math.round(c.relative_humidity_2m));
+            set('wc-wind', Math.round(c.wind_speed_10m));
+            set('wc-precip', (c.precipitation || 0).toFixed(2));
+
+            var now = new Date();
+            set('wx-updated', 'Updated ' + now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}));
+
+            var daily = data.daily;
+            set('wc-sunrise', fmt12(daily.sunrise[0]));
+            set('wc-sunset', fmt12(daily.sunset[0]));
+
+            var weekHtml = '', extHtml = '';
+            for (var i = 0; i < daily.time.length; i++) {
+                var card = buildCard(
+                    daily.time[i],
+                    daily.weather_code[i],
+                    daily.temperature_2m_max[i],
+                    daily.temperature_2m_min[i],
+                    daily.precipitation_probability_max[i] || 0,
+                    daily.wind_speed_10m_max[i],
+                    i === 0
+                );
+                extHtml += card;
+                if (i < 7) weekHtml += card;
+            }
+
+            document.getElementById('forecast-week').innerHTML = weekHtml;
+            document.getElementById('forecast-extended').innerHTML = extHtml;
+            document.getElementById('wx-loading').style.display = 'none';
+            document.getElementById('tab-week').style.display = 'block';
+        })
+        .catch(function(){
+            document.getElementById('wx-loading').textContent = '⚠️ Could not load forecast. Please try again later.';
+        });
+
+    window.showTab = function(name) {
+        ['week','extended'].forEach(function(t){
+            document.getElementById('tab-' + t).style.display = t === name ? 'block' : 'none';
+            document.getElementById('btn-' + t).classList.toggle('active', t === name);
+        });
+    };
+})();
+</script>
+{% endblock %}

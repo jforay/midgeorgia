@@ -1,0 +1,145 @@
+.wx-hero {
+    background: linear-gradient(135deg, #0f1d32 0%, #1a3a5c 60%, #1e5799 100%);
+    color: #fff;
+    padding: 40px 20px 30px;
+    text-align: center;
+}
+
+.wx-current-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 20px 36px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.wx-current-temp {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.wx-current-icon {
+    font-size: 3.5rem;
+    line-height: 1;
+}
+
+.wx-current-details {
+    text-align: left;
+}
+
+.wx-current-desc {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.wx-current-meta {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+.forecast-section {
+    padding: 30px 20px;
+    background: transparent;
+}
+
+.day-card {
+    background: #0f1d32;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    padding: 14px 10px;
+    text-align: center;
+    border-top: 4px solid #4a90d9;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.day-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.day-card .day-name {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.day-card .day-date {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 6px;
+}
+
+.day-card .day-icon {
+    font-size: 2.2rem;
+    line-height: 1.2;
+}
+
+.day-card .day-desc {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 4px 0;
+    min-height: 2.4em;
+}
+
+.day-card .day-temps {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.day-card .day-temps span {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.day-card .day-meta {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 4px;
+}
+
+.tab-toggle {
+    border: none;
+    background: none;
+    padding: 8px 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #555;
+    transition: background 0.2s, color 0.2s;
+}
+
+.tab-toggle.active {
+    background: #0f1d32;
+    color: #fff;
+}
+
+#wx-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.rain-bar-track {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+    margin: 5px 2px 2px;
+    overflow: hidden;
+}
+
+.rain-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+}

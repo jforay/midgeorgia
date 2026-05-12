@@ -20,18 +20,19 @@
     gap: 20px; /* Space between grid items */
     margin: 0 auto; /* Center the grid horizontally */
     padding: 20px; /* Add spacing inside the grid box */
-    color: #0f1d32;
+    color: white;
     box-sizing: border-box;
 }
 
 .grid-item {
-    display: flex; /* Center content vertically and horizontally */
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: white; /* Optional: Slightly lighter background for items */
-    border-radius: 5px; /* Optional: Rounded corners */
+    background-color: #0f1d32;
+    color: white;
+    border-radius: 5px;
 }
 
 .image-item img {

@@ -8,4 +8,5 @@ urlpatterns = [
     path('dirty-work/', views.dirty_work, name='dirty_work'),
     path('get-back/', views.get_back, name='get_back'),
     path('amenities/', views.amenities, name='amenities'),
+    path('weather/', views.weather, name='weather'),
 ]

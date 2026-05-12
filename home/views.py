@@ -17,3 +17,6 @@ def get_back(request):
 
 def amenities(request):
     return render(request, 'home/amenities.html')
+
+def weather(request):
+    return render(request, 'home/weather.html')
