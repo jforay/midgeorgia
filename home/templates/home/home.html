@@ -31,31 +31,51 @@
     </div>
 </section>
  
-<br><br>
+<br><br><!-- how it works: https://youtu.be/TMDQG8rzOhc -->
+<!-- welcome: https://youtu.be/F3i04XHN0Qg -->
 
 <div class="tabs">
     <button class="tab-button active" onclick="showTab('welcome')">Welcome</button>
     <button class="tab-button" onclick="showTab('boat-club')">What is a Boat Club?</button>
     <button class="tab-button" onclick="showTab('how-it-works')">How it Works?</button>
-    
 </div>
 
 <div class="tab-content" id="welcome">
     <div style="padding:56.25% 0 0 0;position:relative;">
-        <iframe  src="https://player.vimeo.com/video/678911241?autoplay=1&amp;muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479#t=9s&end=1m26s" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0; width:100%;height:100%;" title="Destination Boat Clubs Carolinas Opening"></iframe>
+        <iframe src="https://www.youtube.com/embed/F3i04XHN0Qg"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;"
+            title="Welcome">
+        </iframe>
     </div>
-    <img src="{% static 'images/midgeorgia.png' %}" style="position:absolute; bottom:8px; right:8px; width:80px; height:auto; z-index:10;">
-</div> 
+</div>
 
 <div class="tab-content" id="boat-club" style="display: none;">
-    <div style="padding: 56.25% 0 0 0;position: relative;">
-        <iframe src="https://player.vimeo.com/video/798803825?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479#t=9s&end=2m3s" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0; width:100%;height:100%;" title="Destination What is a Boat Club"></iframe>
+    <div style="padding:56.25% 0 0 0;position:relative;">
+        <iframe src="https://www.youtube.com/embed/TMDQG8rzOhc"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;"
+            title="What is a Boat Club">
+        </iframe>
     </div>
 </div>
 
 <div class="tab-content" id="how-it-works" style="display: none;">
     <div style="padding:56.25% 0 0 0;position:relative;">
-        <iframe src="https://player.vimeo.com/video/678912129?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479#t=9s&end=2m8s" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="How it Works"></iframe>
+        <iframe src="https://www.youtube.com/embed/TMDQG8rzOhc"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;"
+            title="How it Works">
+        </iframe>
     </div>
 </div><br><br><br>
 
@@ -127,16 +147,15 @@
 
         <div class="grid-item" style="padding: 0; overflow: hidden; grid-column: span 2;">
             <!-- Add jet ski image URL to src below -->
-            <img src="" alt="Jet Skis (Coming soon!)" style="width: 100%; height: 200px; object-fit: cover; display: block; background: #c8d8e8;">
+            <img src="{% static 'home/images/jetski.jpg' %}" alt="Jet Skis (Coming soon!)" style="width: 100%; height: 200px; object-fit: cover; display: block; background: #c8d8e8;">
             <div style="padding: 20px; background: #0f1d32;">
-                <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">Kawasaki Jet Skis</h3>
+                <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">Jet Skis (Coming Soon)</h3>
                 <p style="color: #fff; font-size: 0.95rem; line-height: 1.6;">Hit the water at full throttle on our Kawasaki jet skis. Whether you're carving wakes, exploring the shoreline, or just feeling the rush, our jet skis deliver an experience unlike anything else on the lake.</p>
             </div>
         </div>
 
         <div class="grid-item" style="padding: 0; overflow: hidden; grid-column: span 2;">
-            <!-- Add kayak image URL to src below -->
-            <img src="" alt="Kayaks" style="width: 100%; height: 200px; object-fit: cover; display: block; background: #c8d8e8;">
+            <img src="{% static 'home/images/kayaks.jpg' %}" alt="Kayaks" style="width: 100%; height: 200px; object-fit: cover; display: block; background: #c8d8e8;">
             <div style="padding: 20px; background: #0f1d32;">
                 <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">Kayaks</h3>
                 <p style="color: #fff; font-size: 0.95rem; line-height: 1.6;">Prefer a slower pace? Our kayaks let you explore quiet coves, fish from the water, or just soak in the scenery at your own speed. Perfect for solo outings or a peaceful trip with a partner.</p>
@@ -145,7 +164,7 @@
 
         <div class="grid-item" style="padding: 0; overflow: hidden; grid-column: span 2;">
             <!-- Add paddleboard image URL to src below -->
-            <img src="" alt="Paddleboards" style="width: 100%; height: 200px; object-fit: cover; display: block; background: #c8d8e8;">
+            <img src="{% static 'home/images/paddleboard.jpg' %}" alt="Paddleboards" style="width: 100%; height: 200px; object-fit: cover; display: block; background: #c8d8e8;">
             <div style="padding: 20px; background: #0f1d32;">
                 <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">Paddleboards</h3>
                 <p style="color: #fff; font-size: 0.95rem; line-height: 1.6;">Stand-up paddleboarding is one of the best full-body workouts on the water — or just a fun, relaxing way to cruise the lake. Boards are available for all skill levels, beginners included.</p>
@@ -154,7 +173,7 @@
 
         <div class="grid-item" style="padding: 0; overflow: hidden; grid-column: span 3;">
             <!-- Add pontoon/deck boat image URL to src below -->
-            <img src="" alt="Pontoon and Deck Boats" style="width: 100%; height: 200px; object-fit: cover; display: block; background: #c8d8e8;">
+            <img src="{% static 'home/images/tritoon.jpg' %}" alt="Pontoon and Deck Boats" style="width: 100%; height: 300px; object-fit: cover; display: block; background: #c8d8e8;">
             <div style="padding: 20px; background: #0f1d32;">
                 <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">Pontoon &amp; Deck Boats</h3>
                 <p style="color: #fff; font-size: 0.95rem; line-height: 1.6;">Our full fleet of pontoon and deck boats is ready for family days, sunset cruises, and everything in between. Cleaned, fueled, and stocked with safety gear before every reservation.</p>
@@ -164,7 +183,7 @@
 
         <div class="grid-item" style="padding: 0; overflow: hidden; grid-column: span 3;">
             <!-- Add marina image URL to src below -->
-            <img src="" alt="Full-Service Marina" style="width: 100%; height: 200px; object-fit: cover; display: block; background: #c8d8e8;">
+            <img src="{% static 'home/images/marina.jpg' %}" alt="Full-Service Marina" style="width: 100%; height: 300px; object-fit: cover; display: block; background: #c8d8e8;">
             <div style="padding: 20px; background: #0f1d32;">
                 <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">Full-Service Marina</h3>
                 <p style="color: #fff; font-size: 0.95rem; line-height: 1.6;">Our on-site marina staff is there every day of operation. Dock assistance, fueling, equipment storage, and a clean, professional facility to make your arrival and departure effortless.</p>

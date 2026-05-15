@@ -20,3 +20,6 @@ def amenities(request):
 
 def weather(request):
     return render(request, 'home/weather.html')
+
+def faq(request):
+    return render(request, 'home/faq.html')

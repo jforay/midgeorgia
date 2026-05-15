@@ -9,4 +9,5 @@ urlpatterns = [
     path('get-back/', views.get_back, name='get_back'),
     path('amenities/', views.amenities, name='amenities'),
     path('weather/', views.weather, name='weather'),
+    path('faq/', views.faq, name='faq'),
 ]
