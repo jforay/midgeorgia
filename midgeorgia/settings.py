@@ -135,6 +135,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'joe4a83@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = 'joe4a83@gmail.com'
-
+SITE_ADMIN_EMAIL = 'joe4a83@gmail.com'
 
 HONEYPOT_FIELD_NAME = 'phonenumber2'
