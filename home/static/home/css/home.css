@@ -43,14 +43,17 @@ body.home-hero-page .site-header.is-transparent .mobile-nav{
   inset:0;
   background: linear-gradient(90deg, rgba(15,29,50,.62), rgba(15,29,50,.35) 55%, rgba(15,29,50,.18));
   display:flex;
-  align-items:center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 15% 0 0 52%;
 }
 
 .home-hero-inner{
-  width: min(1100px, calc(100% - 40px));
-  margin: 0 auto;
-  text-align: center;
+  width: fit-content;
+  max-width: 600px;
+  margin: 0;
+  text-align: left;
+  padding-left: 0;
 }
 
 .home-hero-inner h1{
@@ -60,6 +63,10 @@ body.home-hero-page .site-header.is-transparent .mobile-nav{
   letter-spacing:-.02em;
 }
 
+.home-hero-inner h1:nth-child(2){
+  text-align: center;
+}
+
 .home-hero-tagline{
   font-style: italic;
   text-align: center;
@@ -67,12 +74,12 @@ body.home-hero-page .site-header.is-transparent .mobile-nav{
 }
 
 .home-hero-inner p{
-  max-width: 60ch;
   color: rgba(255,255,255,.85);
   font-size: 1.05rem;
   margin:0 0 .5rem;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
+  white-space: nowrap;
 }
 
 .home-hero-actions{
