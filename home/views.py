@@ -52,3 +52,6 @@ def weather(request):
 
 def faq(request):
     return render(request, 'home/faq.html')
+
+def banner(request):
+    return render(request, 'home/banner.html')

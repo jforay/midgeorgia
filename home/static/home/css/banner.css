@@ -1,0 +1,87 @@
+html, body {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    background-color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#siteHeader {
+    flex-shrink: 0;
+}
+
+.banner {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+}
+
+.home-hero {
+    height: 100% !important;
+    min-height: 0 !important;
+}
+
+.banner .home-hero-img {
+    border-radius: 0;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 45px;
+    width: 100%;
+    text-align: center;
+    font-size: 56px;
+    font-weight: bold;
+    color: yellow;
+}
+
+/* Hero overlay overrides for marketing banner pages */
+.home-hero-overlay {
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 5% 6% 0 0;
+}
+
+.home-hero-inner {
+    padding-left: 0;
+    text-align: left;
+    width: min(900px, 55%);
+    margin: 0;
+}
+
+.home-hero-inner h1 {
+    font-size: clamp(3rem, 5.5vw, 5rem);
+}
+
+.home-hero-inner h1:nth-child(2) {
+    text-align: center;
+}
+
+.home-hero-inner p {
+    font-size: 1.35rem;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.home-hero-actions {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-btn {
+    font-size: 1.2rem;
+    padding: 0.85rem 1.8rem;
+}
+
+.hero-btn.primary,
+.hero-btn.ghost {
+    background: #0f1d32;
+    border-color: #0f1d32;
+    color: #fff;
+}
