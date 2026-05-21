@@ -45,13 +45,13 @@ body.home-hero-page .site-header.is-transparent .mobile-nav{
   display:flex;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 15% 0 0 52%;
 }
 
 .home-hero-inner{
   width: fit-content;
   max-width: 600px;
-  margin: 0;
+  margin-top: 30vh;
+  margin-left: 52%;
   text-align: left;
   padding-left: 0;
 }
@@ -136,6 +136,34 @@ body.home-hero-page .site-header.is-transparent .mobile-nav{
 
 .hero-btn:hover {
     transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+@media (max-width: 1200px) {
+  .home-hero-overlay {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .home-hero-inner {
+    width: min(1100px, calc(100% - 40px));
+    max-width: none;
+    margin-top: 50vh;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .home-hero-inner h1:nth-child(2) {
+    text-align: center;
+  }
+
+  .home-hero-inner p {
+    white-space: normal;
+    max-width: 60ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* Tabs */

@@ -51,20 +51,22 @@ body {
 
 /* Hero overlay overrides for marketing banner pages */
 .home-hero-overlay {
-    justify-content: flex-end;
+    justify-content:center;
     align-items: flex-start;
-    padding: 5% 6% 0 0;
+    padding: 5% 0 0 20%;
 }
 
 .home-hero-inner {
     padding-left: 0;
     text-align: left;
-    width: min(900px, 55%);
+    width: fit-content;
+    max-width: 75%;
     margin: 0;
 }
 
 .home-hero-inner h1 {
     font-size: clamp(3rem, 5.5vw, 5rem);
+    white-space: nowrap;
 }
 
 .home-hero-inner h1:nth-child(2) {
